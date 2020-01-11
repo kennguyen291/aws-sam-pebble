@@ -1,0 +1,22 @@
+{
+  "name": "aws-sam-pebble",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/unit/",
+    "package": "sam package --template-file template.yaml --output-template-file output.yaml --s3-bucket serverlesspebbleit --s3-prefix backend-package",
+    "deploy": "sam deploy --template-file output.yaml --stack-name aws-sam-pebble --capabilities CAPABILITY_IAM",
+    "qd": "npm run package && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertnev/aws-sam.git"
+  },
+  "keywords": [
+    "send",
+    "email"
+  ],
+  "author": "SAM CLI",
+  "license": "MIT"
+}
